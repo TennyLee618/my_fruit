@@ -1,0 +1,121 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wxb820c791e554616c",
+  "projectname": "圈果项目",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 1,
+      "list": [
+        {
+          "id": 0,
+          "name": "我的123",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "进货单",
+          "pathName": "pages/order/order",
+          "query": ""
+        },
+        {
+          "id": 2,
+          "name": "我的订单",
+          "pathName": "pagesII/myOrder/myOrder",
+          "query": ""
+        },
+        {
+          "id": 3,
+          "name": "详情",
+          "pathName": "pagesIII/productDetail/productDetail",
+          "query": "id=1311280367173636096&__id__=2",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "确认订单",
+          "pathName": "pagesIII/submitOrder/submitOrder",
+          "query": "ids=1311225686585892864&__id__=1"
+        },
+        {
+          "id": 5,
+          "name": "支付成功",
+          "pathName": "pagesIII/PayOK/PayOK",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "搜水果",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "订单统计",
+          "pathName": "pagesII/OrderStatistics/OrderStatistics",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "最近看过",
+          "pathName": "pagesII/Recently/Recently",
+          "query": "__id__=1",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
