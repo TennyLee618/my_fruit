@@ -10281,7 +10281,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 508:
+/***/ 515:
 /*!*****************************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/MpHtmlParser.js ***!
   \*****************************************************************************/
@@ -10295,9 +10295,9 @@ module.exports = g;
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 509),
+var cfg = __webpack_require__(/*! ./config.js */ 516),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 510),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 517),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -10827,7 +10827,7 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 509:
+/***/ 516:
 /*!***********************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/config.js ***!
   \***********************************************************************/
@@ -10917,14 +10917,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 510:
+/***/ 517:
 /*!***************************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/CssHandler.js ***!
   \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 509),
+var cfg = __webpack_require__(/*! ./config.js */ 516),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {

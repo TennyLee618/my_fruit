@@ -93,6 +93,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
+  tuiIcon: function() {
+    return __webpack_require__.e(/*! import() | components/tui-icon/tui-icon */ "components/tui-icon/tui-icon").then(__webpack_require__.bind(null, /*! @/components/tui-icon/tui-icon.vue */ 365))
+  },
   tuiListView: function() {
     return __webpack_require__.e(/*! import() | components/tui-list-view/tui-list-view */ "components/tui-list-view/tui-list-view").then(__webpack_require__.bind(null, /*! @/components/tui-list-view/tui-list-view.vue */ 489))
   },
@@ -137,7 +140,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
 //
 //
 //
@@ -180,10 +187,18 @@ var _default =
 {
   data: function data() {
     return {};
-
-
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    back: function back() {
+      uni.navigateBack();
+    },
+    clickToItem: function clickToItem() {
+      console.log("欢迎你们来测试");
+      // uni.navigateTo({
+      // 	url: "../../pagesII/timeInfo/timeInfo?id="+ id
+      // })
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

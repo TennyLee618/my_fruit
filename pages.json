@@ -160,7 +160,9 @@
 					"path": "message/message",
 					"style": {
 						"enablePullDownRefresh": true,
-						"navigationBarTitleText": "资讯消息"
+						"navigationBarTitleText": "资讯消息",
+						"navigationStyle": "custom"
+						
 					}
 				}, {
 					"path": "kingarea/kingarea",
@@ -274,7 +276,11 @@
 						"navigationBarTitleText": "更新店铺"
 					}
 				}
-			]
+			    ,{
+                    "path" : "msg/msg",
+                    "style" : {}
+                }
+            ]
 		},
 		{
 			"root": "pagesIII", //三级分包目录

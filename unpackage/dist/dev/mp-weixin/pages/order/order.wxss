@@ -40,8 +40,8 @@
 	        justify-content: center;
 }
 .img-quanguo {
-	height: 600rpx;
-	width: 300rpx;
+	width: 380rpx;
+	height: 486rpx;
 }
 .color-text {
 	font-size: 32rpx;
@@ -80,13 +80,13 @@
 }
 .tui-goods-num {
 	font-weight: bold;
-	color: #FF5600;
+	color: #ff5600;
 }
 .tui-cart-cell {
 	width: 100%;
 	-webkit-border-radius: 12rpx;
 	        border-radius: 12rpx;
-	background: #FFFFFF;
+	background: #ffffff;
 	padding: 40rpx 0;
 	overflow: hidden;
 }
@@ -118,7 +118,7 @@
 	border-color: #d1d1d1 !important;
 }
 .tui-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-	background: #00BC45;
+	background: #00bc45;
 	width: 44rpx !important;
 	height: 44rpx !important;
 	border: none;
@@ -167,9 +167,9 @@
 }
 .tag-tit {
 	/* 渐变色 */
-	background: -webkit-gradient(linear, left top, right top, from(#00C94A), to(#00AC3F));
-	background: -webkit-linear-gradient(left, #00C94A, #00AC3F);
-	background: linear-gradient(to right, #00C94A, #00AC3F);
+	background: -webkit-gradient(linear, left top, right top, from(#00c94a), to(#00ac3f));
+	background: -webkit-linear-gradient(left, #00c94a, #00ac3f);
+	background: linear-gradient(to right, #00c94a, #00ac3f);
 	margin-right: 10rpx;
 	padding: 0 10rpx;
 	-webkit-border-radius: 15rpx 0 15rpx 0;
@@ -204,14 +204,14 @@
 .tui-goods-price {
 	font-size: 20rpx;
 	font-weight: 400;
-	color: #B6B6B6;
+	color: #b6b6b6;
 }
 .goods-price-tag {
 	font-size: 16rpx;
-	color: #FF5600;
+	color: #ff5600;
 }
 .goods-price-num {
-	color: #FF5600;
+	color: #ff5600;
 	font-size: 32rpx;
 	font-weight: bold;
 }
@@ -244,7 +244,7 @@
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	        align-items: center
+	        align-items: center;
 }
 .tui-bold {
 	font-weight: bold;
@@ -267,7 +267,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	margin-left: auto
+	margin-left: auto;
 }
 .tui-invalid-text {
 	width: 66rpx;
@@ -275,7 +275,7 @@
 	text-align: center;
 	font-size: 24rpx;
 	color: #fff;
-	background: rgba(0, 0, 0, .3);
+	background: rgba(0, 0, 0, 0.3);
 	-webkit-transform: scale(0.8);
 	        transform: scale(0.8);
 	-webkit-transform-origin: center center;
@@ -286,7 +286,7 @@
 	        flex-shrink: 0;
 }
 .tui-gray {
-	color: #B2B2B2 !important;
+	color: #b2b2b2 !important;
 }
 .tui-goods-invalid {
 	color: #555;
@@ -354,12 +354,12 @@
 	color: #333;
 }
 .total-label {
-	color: #FF5600;
+	color: #ff5600;
 	font-weight: 400;
 	font-size: 24rpx;
 }
 .total-price-num {
-	color: #FF5600;
+	color: #ff5600;
 	font-size: 36rpx;
 	font-weight: bold;
 	margin: 0 4rpx;
@@ -373,9 +373,9 @@
 	width: 30%;
 }
 .go-pay {
-	background: -webkit-gradient(linear, left top, right top, from(#00C52A), to(#00BC45));
-	background: -webkit-linear-gradient(left, #00C52A, #00BC45);
-	background: linear-gradient(to right, #00C52A, #00BC45);
+	background: -webkit-gradient(linear, left top, right top, from(#00c52a), to(#00bc45));
+	background: -webkit-linear-gradient(left, #00c52a, #00bc45);
+	background: linear-gradient(to right, #00c52a, #00bc45);
 	color: #fff;
 	width: 90%;
 	padding: 12rpx 0;
@@ -401,7 +401,7 @@
 
 /*猜你喜欢*/
 .tui-youlike {
-	padding-left: 12rpx
+	padding-left: 12rpx;
 }
 .tui-product-list {
 	display: -webkit-box;
@@ -527,7 +527,6 @@
 	width: 100%;
 }
 button::after {
-
 	/* border: 2rpx solid #00AC3F; */
 }
 button {
@@ -536,15 +535,12 @@ button {
 
 	padding-left: 0;
 
-
 	padding-right: 0;
 
 	line-height: inherit;
 }
 button {
-
 	-webkit-border-radius: 0;
-
 	        border-radius: 0;
 }
 .btn {
@@ -552,10 +548,13 @@ button {
 	        border-radius: 100rpx;
 	height: 80rpx;
 	width: 300rpx;
-	background-color: #FFFFFF;
-	border: 1rpx solid rgba(0, 197, 42, 1);
+	background-color: #ffffff;
+
+	border: 1px solid rgba(0, 197, 42, 1);
 	color: rgba(0, 197, 42, 1) !important;
 	padding: 16rpx 0;
 	font-size: 32rpx;
+	-webkit-box-shadow: 0 0 10rpx -2rpx;
+	        box-shadow: 0 0 10rpx -2rpx;
 }
 

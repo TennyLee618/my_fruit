@@ -183,6 +183,12 @@
 						<view class="tui-tool-text">联系客服
 						</view>
 					</view>
+					<view class="tui-tool-item" @tap="href(8)">
+						<view class="tui-icon-box">
+							<image src="/static/images/msg.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">资讯信息</view>
+					</view>
 					<view class="tui-tool-item" @tap="href(5)">
 						<view class="tui-icon-box">
 							<image src="/static/images/guize@3x.png" class="tui-tool-icon"></image>
@@ -201,13 +207,13 @@
 						</view>
 						<view class="tui-tool-text">设置</view>
 					</view>
-					<view class="tui-tool-item">
+					<!-- <view class="tui-tool-item">
 						<view class="tui-icon-box">
 
 						</view>
 						<view class="tui-tool-text"></view>
 					</view>
-
+ -->
 				</view>
 			</view>
 
@@ -689,7 +695,7 @@
 						url = "../../pagesII/SetUp/SetUp"
 						break;
 					case 8:
-						url = "../../pagesII/myOrder/myOrder"
+						url = "../../pagesII/message/message"
 						break;
 					default:
 						break;

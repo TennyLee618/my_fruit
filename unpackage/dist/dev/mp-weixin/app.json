@@ -35,7 +35,8 @@
         "timeInfo/timeInfo",
         "StoreInformation/StoreInformation",
         "editStore/editStore",
-        "updataStore/updataStore"
+        "updataStore/updataStore",
+        "msg/msg"
       ]
     },
     {
@@ -104,6 +105,5 @@
       "desc": "已为您提供最近的服务信息"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap9.json"
+  "usingComponents": {}
 }

@@ -276,14 +276,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _api = __webpack_require__(/*! ../../api/api.js */ 19);
 
-
-
-
-
-
 var _request = __webpack_require__(/*! ../../api/request.js */ 21); //
+//
+//
+//
 //
 //
 //
@@ -397,28 +398,15 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       flag: false, checkFlag: false, //默认选中
       allFlag: '', //全选
       checkedArr: [], //存放选中的数据
-      valueNum: 0, url: 'http://192.168.1.10:8980', orderObj: [], openid: '', neworder: [], isCheck: false, dataList: [{ id: "q2020811", buyNum: 1, price: 299.5, selected: false, imgsrc: '../../static/images/putao1.png', shopName: '大葡萄' }, { id: 'q2020812', buyNum: 2, price: 499, selected: false, imgsrc: '../../static/images/niuyouguo1.png', shopName: '大哈密瓜' }, { id: 'q2020813', buyNum: 3, price: 199, selected: false, imgsrc: '../../static/images/putao1.png', shopName: '大紫葡萄' }], isAll: false, totalPrice: 0, buyNum: 0, cartIds: [], //购物车id
+      valueNum: 0, url: 'http://192.168.1.10:8980', orderObj: [], openid: '', neworder: [], isCheck: false, dataList: [{ id: 'q2020811', buyNum: 1, price: 299.5, selected: false, imgsrc: '../../static/images/putao1.png', shopName: '大葡萄' }, { id: 'q2020812', buyNum: 2, price: 499, selected: false, imgsrc: '../../static/images/niuyouguo1.png', shopName: '大哈密瓜' }, { id: 'q2020813', buyNum: 3, price: 199, selected: false, imgsrc: '../../static/images/putao1.png', shopName: '大紫葡萄' }], isAll: false, totalPrice: 0, buyNum: 0, cartIds: [], //购物车id
       actions: [{ name: '删除', color: '#fff', fontsize: 28, width: 64, background: '#F82400' }], actions2: [{ name: '看相似', color: '#fff', fontsize: 28, width: 64, background: '#FF7035' }, { name: '删除', color: '#fff', fontsize: 28, width: 64, background: '#F82400' }], isEdit: false, pageIndex: 1, loadding: false, pullUpOn: true, allPrice: 0 //总价
     };}, filters: { getPrice: function getPrice(price) {price = price || 0;return price.toFixed(2);} }, methods: { goIndex: function goIndex() {uni.switchTab({ url: '../index/index' });}, init: function init(bull, tips) {this.modaishow = bull;this.tips = tips;}, //获取头像昵称
     getUserInfo: function getUserInfo(event) {// log(event)
       this.usering = event.detail.userInfo;uni.setStorageSync('userIN', event.detail.userInfo); //把头像存在本地，小程序提供如同浏览器cookie
-      var userING = uni.setStorageSync('userIN', event.detail.userInfo);if (event.detail.userInfo) {var wxing = event.detail.userInfo;this.wxCode(wxing.avatarUrl, wxing.nickName);}
-      // wx.startPullDownRefresh()
-    },
-    //获取code
-    wxCode: function wxCode(avatarUrl, nickName) {var _this = this;
-      wx.login({
-        success: function success(res) {
-          // log(res)
-          var code = res.code;
-          _this.wxLoging(code);
-        },
-        fail: function fail(err) {
-          log(err);
-        } });
-
-
-    },
+      var userING = uni.setStorageSync('userIN', event.detail.userInfo);if (event.detail.userInfo) {var wxing = event.detail.userInfo;this.wxCode(wxing.avatarUrl, wxing.nickName);} // wx.startPullDownRefresh()
+    }, //获取code
+    wxCode: function wxCode(avatarUrl, nickName) {var _this = this;wx.login({ success: function success(res) {// log(res)
+          var code = res.code;_this.wxLoging(code);}, fail: function fail(err) {log(err);} });},
     //发code给后台换取token
     wxLoging: function wxLoging(code) {var _this2 = this;
       log(code);
@@ -450,7 +438,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
             } });
 
           return;
-
         } else if (res.statusCode == 200) {
           log(res);
         }
@@ -461,7 +448,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         _this2.orderIng();
         _this2.getMerchants();
         uni.hideLoading();
-
       }).
       catch(function (err) {
         uni.showToast({
@@ -470,7 +456,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
 
         log(err);
       });
-
     },
     //购买前获取申请店铺状态信息
     getMerchants: function getMerchants() {var _this3 = this;
@@ -484,12 +469,10 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         ///登录成功后显示去认证店铺，如果已认证，显示已认证店铺
         _this3.ApproveStatus = res.data.data.approveStatus; //获取状态码，0未认证，1已认证，2拒绝
         // log(this.ApproveStatus)
-
       }).
       catch(function (err) {
         log(err);
       });
-
     },
     //计算总价
     jieSuanPrice: function jieSuanPrice() {
@@ -499,7 +482,8 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         for (var indexTwo in oneData) {
           var goodsData = oneData[indexTwo];
           //indexOf 此方法判断数组中是否存在某个值，如果存在返回数组元素的下标，否则返回-1
-          if (this.cartIds.indexOf(goodsData.id) != -1) {//判断选中的商品id数组中是否包含
+          if (this.cartIds.indexOf(goodsData.id) != -1) {
+            //判断选中的商品id数组中是否包含
             //获取单价
             //获取数量
             //两个相乘
@@ -528,15 +512,11 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         // }
 
         // log(this.orderObj)
-
-
       }).
       catch(function (err) {
         log(err);
       });
     },
-
-
 
     //商品详情页
     gotoList: function gotoList(id) {
@@ -546,7 +526,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         url: '../../pagesIII/productDetail/productDetail?id=' + id });
 
     },
-
 
     //反馈提示
     tising: function tising(bull, tips) {
@@ -572,8 +551,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
     //更新进货单数量
     changeNum: function changeNum(e) {
       uni.showLoading({});
-
-
       // console.log(e)
       this.orderObj[e.custom].list[e.index].number = e.value;
 
@@ -582,14 +559,13 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
 
       /* this.valueNum = e.value */
       /* this.orderObj[index].number 
-                                    this.valueNum = e.value
-                                    console.log(e.value) */
+                                    	this.valueNum = e.value
+                                    	console.log(e.value) */
       var data = {
         id: this.orderObj[e.custom].list[e.index].id,
         goodsId: this.orderObj[e.custom].list[e.index].goodsId,
         number: this.orderObj[e.custom].list[e.index].number,
         token: setdata };
-
 
       // log(data)
       //更新我的加购单
@@ -604,11 +580,7 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       }).
       catch(function (err) {
         log(err);
-
       });
-
-
-
 
       // this.dataList[e.index].buyNum = e.value
       // setTimeout(() => {
@@ -644,8 +616,6 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       });
       // let index = e.index;
       // let item = e.item;
-
-
     },
     editGoods: function editGoods() {
 
@@ -683,9 +653,9 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       console.log(this.cartIds);
       var setdata = uni.getStorageSync('usermen');
       //拼接字符串id
-      var ids = "";
+      var ids = '';
       for (var index in this.cartIds) {
-        ids = ids + this.cartIds[index] + ",";
+        ids = ids + this.cartIds[index] + ',';
       }
       //去除ids最后一个逗号
       ids = ids.substring(0, ids.length - 1);
@@ -704,11 +674,7 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       catch(function (err) {
         log(err);
       });
-
-
     },
-
-
 
     //去结算
     btnPay: function btnPay() {
@@ -730,9 +696,9 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       //结算,获取到选中的商品id数组
       // console.log(this.cartIds);
       //拼接字符串id
-      var ids = "";
+      var ids = '';
       for (var index in this.cartIds) {
-        ids = ids + this.cartIds[index] + ",";
+        ids = ids + this.cartIds[index] + ',';
       }
       //去除ids最后一个逗号
       ids = ids.substring(0, ids.length - 1);
@@ -763,7 +729,8 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
       log(e);
       this.isAll = false;
       this.flag = false; //默认为不选中
-      if (e.detail.value && e.detail.value.length > 0) {//全选按钮为选中状态
+      if (e.detail.value && e.detail.value.length > 0) {
+        //全选按钮为选中状态
         this.flag = true; //选中
         this.$forceUpdate();
       } else if (e.detail.value && e.detail.value.length === 0) {
@@ -771,11 +738,12 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
         this.$forceUpdate();
       }
       this.cartIds = []; //清空id
-      console.log("全选状态======", this.flag);
+      console.log('全选状态======', this.flag);
       for (var index in this.orderObj) {
         for (var indexTwo in this.orderObj[index].list) {
           this.orderObj[index].list[indexTwo].selected = this.flag;
-          if (this.flag) {//选中，把所有商品id添加到id数组中
+          if (this.flag) {
+            //选中，把所有商品id添加到id数组中
             this.cartIds.push(this.orderObj[index].list[indexTwo].id);
           }
         }
@@ -863,11 +831,8 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
     }
   },
 
-
   onLoad: function onLoad() {
-
     this.flag = false;
-
   },
   onPullDownRefresh: function onPullDownRefresh() {
     var setdata = uni.getStorageSync('usermen');
@@ -880,7 +845,7 @@ var _console = console,log = _console.log;var setdata = uni.getStorageSync('user
 
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
     this.isEdit = !this.isEdit;
-    var text = this.isEdit ? "完成" : "编辑";
+    var text = this.isEdit ? '完成' : '编辑';
 
 
 
