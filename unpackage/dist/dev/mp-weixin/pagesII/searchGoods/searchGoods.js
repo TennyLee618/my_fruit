@@ -123,10 +123,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   tuiTag: function() {
-    return __webpack_require__.e(/*! import() | components/tui-tag/tui-tag */ "components/tui-tag/tui-tag").then(__webpack_require__.bind(null, /*! @/components/tui-tag/tui-tag.vue */ 475))
+    return __webpack_require__.e(/*! import() | components/tui-tag/tui-tag */ "components/tui-tag/tui-tag").then(__webpack_require__.bind(null, /*! @/components/tui-tag/tui-tag.vue */ 483))
   },
   tuiActionsheet: function() {
-    return __webpack_require__.e(/*! import() | components/tui-actionsheet/tui-actionsheet */ "components/tui-actionsheet/tui-actionsheet").then(__webpack_require__.bind(null, /*! @/components/tui-actionsheet/tui-actionsheet.vue */ 482))
+    return __webpack_require__.e(/*! import() | components/tui-actionsheet/tui-actionsheet */ "components/tui-actionsheet/tui-actionsheet").then(__webpack_require__.bind(null, /*! @/components/tui-actionsheet/tui-actionsheet.vue */ 490))
   }
 }
 var render = function() {
@@ -304,21 +304,22 @@ var util = __webpack_require__(/*! @/utils/util.js */ 99);var _default = { data:
       // ],
       hot: ["德利赫特", "托雷斯", "早安D站", "D站观点", "德利赫特", "美洲杯", "华为手机", "C罗", "自热火锅", "2019退役球星", "女神大会"], key: "", showActionSheet: false, tips: "确认清空搜索历史吗？", //搜索历史列表
       searchResult: [// "按照展示的列表输入关键词看效果","thorui","2019退役球星","搜索关键词高亮显示","模拟搜索结果集","开源不易，需要鼓励","人人为我，我为人人",
-      ], searchList: [] };}, computed: _objectSpread({}, (0, _vuex.mapState)(['history'])), methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['saveSearch', 'clearSearch'])), {}, { clickItem: function clickItem(val) {console.log(val);uni.navigateTo({ url: '../../pagesII/productList/productList?name=' + val });}, back: function back() {uni.navigateBack();}, cleanKey: function cleanKey() {this.key = '';}, closeActionSheet: function closeActionSheet() {this.showActionSheet = false;}, openActionSheet: function openActionSheet() {this.showActionSheet = true;}, itemClick: function itemClick(e) {var index = e.index;if (index == 0) {this.showActionSheet = false;this.clearSearch();}}, inputKey: function inputKey(e) {var name = e.detail.value;if (name === '') {uni.showToast({
+      ], searchList: [] };}, computed: _objectSpread({}, (0, _vuex.mapState)(['history'])), methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['saveSearch', 'clearSearch'])), {}, { clickItem: function clickItem(val) {this.saveSearch({ data: val });this.key = "";uni.navigateTo({ url: '../../pagesII/productList/productList?name=' + val });}, back: function back() {uni.navigateBack();}, cleanKey: function cleanKey() {this.key = '';}, closeActionSheet: function closeActionSheet() {this.showActionSheet = false;}, openActionSheet: function openActionSheet() {this.showActionSheet = true;}, itemClick: function itemClick(e) {var index = e.index;if (index == 0) {this.showActionSheet = false;this.clearSearch();}}, inputKey: function inputKey(e) {var name = e.detail.value;if (name === '') {
+        uni.showToast({
           title: "请输入关键词",
           icon: "none" });
 
       }
       this.key = util.trim(e.detail.value);
-      // uni.navigateTo({
-      // 	url:'../../pagesII/productList/productList?name=' + name
-      // })
-      console.log(this.key);
+      uni.navigateTo({
+        url: '../../pagesII/productList/productList?name=' + this.key });
+
       this.saveSearch({ data: this.key });
+      this.key = "";
     } }),
 
   onLoad: function onLoad(options) {
-    console.log();
+    console.log(this.history);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

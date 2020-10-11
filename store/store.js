@@ -29,8 +29,9 @@ export default new Vuex.Store({
 		saveSearch(state, data) {
 			let arr = state.history
 			arr.unshift(data.data)
-			state.history = arr
-			uni.setStorageSync('history', arr)
+			let res = new Set(arr)
+			state.history = Array.from(res)
+			uni.setStorageSync('history', Array.from(res))
 		},
 		// 清空搜索结果历史记录
 		clearSearch(state, data) {

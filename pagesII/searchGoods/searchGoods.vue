@@ -108,7 +108,8 @@
 		methods: {
 			...mapMutations(['saveSearch','clearSearch']),
 			clickItem(val) {
-				console.log(val)
+				this.saveSearch({data:val})
+				this.key=""
 				uni.navigateTo({
 					url:'../../pagesII/productList/productList?name=' + val
 				})
@@ -142,15 +143,15 @@
 					})
 				}
 				this.key = util.trim(e.detail.value);
-				// uni.navigateTo({
-				// 	url:'../../pagesII/productList/productList?name=' + name
-				// })
-				console.log(this.key)
+				uni.navigateTo({
+					url:'../../pagesII/productList/productList?name=' + this.key
+				})
 				this.saveSearch({data:this.key})
+				this.key = ""
 			}
 		},
 		onLoad (options) {
-			console.log()
+			console.log(this.history)
 		}
 	}
 </script>

@@ -1974,8 +1974,9 @@ new _vuex.default.Store({
     saveSearch: function saveSearch(state, data) {
       var arr = state.history;
       arr.unshift(data.data);
-      state.history = arr;
-      uni.setStorageSync('history', arr);
+      var res = new Set(arr);
+      state.history = Array.from(res);
+      uni.setStorageSync('history', Array.from(res));
     },
     // 清空搜索结果历史记录
     clearSearch: function clearSearch(state, data) {
@@ -10281,7 +10282,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 515:
+/***/ 523:
 /*!*****************************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/MpHtmlParser.js ***!
   \*****************************************************************************/
@@ -10295,9 +10296,9 @@ module.exports = g;
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 516),
+var cfg = __webpack_require__(/*! ./config.js */ 524),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 517),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 525),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -10827,7 +10828,7 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 516:
+/***/ 524:
 /*!***********************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/config.js ***!
   \***********************************************************************/
@@ -10917,14 +10918,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 517:
+/***/ 525:
 /*!***************************************************************************!*\
   !*** /Users/mac/Downloads/fruit/components/jyf-parser/libs/CssHandler.js ***!
   \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 516),
+var cfg = __webpack_require__(/*! ./config.js */ 524),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {

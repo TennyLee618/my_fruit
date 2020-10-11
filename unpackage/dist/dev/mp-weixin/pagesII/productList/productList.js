@@ -94,19 +94,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   tuiIcon: function() {
-    return __webpack_require__.e(/*! import() | components/tui-icon/tui-icon */ "components/tui-icon/tui-icon").then(__webpack_require__.bind(null, /*! @/components/tui-icon/tui-icon.vue */ 365))
+    return __webpack_require__.e(/*! import() | components/tui-icon/tui-icon */ "components/tui-icon/tui-icon").then(__webpack_require__.bind(null, /*! @/components/tui-icon/tui-icon.vue */ 373))
   },
   tuiTopDropdown: function() {
-    return __webpack_require__.e(/*! import() | components/tui-top-dropdown/tui-top-dropdown */ "components/tui-top-dropdown/tui-top-dropdown").then(__webpack_require__.bind(null, /*! @/components/tui-top-dropdown/tui-top-dropdown.vue */ 435))
+    return __webpack_require__.e(/*! import() | components/tui-top-dropdown/tui-top-dropdown */ "components/tui-top-dropdown/tui-top-dropdown").then(__webpack_require__.bind(null, /*! @/components/tui-top-dropdown/tui-top-dropdown.vue */ 443))
   },
   tuiDrawer: function() {
-    return __webpack_require__.e(/*! import() | components/tui-drawer/tui-drawer */ "components/tui-drawer/tui-drawer").then(__webpack_require__.bind(null, /*! @/components/tui-drawer/tui-drawer.vue */ 442))
+    return __webpack_require__.e(/*! import() | components/tui-drawer/tui-drawer */ "components/tui-drawer/tui-drawer").then(__webpack_require__.bind(null, /*! @/components/tui-drawer/tui-drawer.vue */ 450))
   },
   easySelect: function() {
-    return __webpack_require__.e(/*! import() | components/easy-select/easy-select */ "components/easy-select/easy-select").then(__webpack_require__.bind(null, /*! @/components/easy-select/easy-select.vue */ 449))
+    return __webpack_require__.e(/*! import() | components/easy-select/easy-select */ "components/easy-select/easy-select").then(__webpack_require__.bind(null, /*! @/components/easy-select/easy-select.vue */ 457))
   },
   tuiNomore: function() {
-    return __webpack_require__.e(/*! import() | components/tui-nomore/tui-nomore */ "components/tui-nomore/tui-nomore").then(__webpack_require__.bind(null, /*! @/components/tui-nomore/tui-nomore.vue */ 379))
+    return __webpack_require__.e(/*! import() | components/tui-nomore/tui-nomore */ "components/tui-nomore/tui-nomore").then(__webpack_require__.bind(null, /*! @/components/tui-nomore/tui-nomore.vue */ 387))
   }
 }
 var render = function() {
@@ -828,14 +828,14 @@ var _console = console,log = _console.log;var _default = { data: function data()
       } };}, onLoad: function onLoad(options) {var _this = this;var pages = getCurrentPages();var curPage = pages[pages.length - 1]; // 当前页面路径
     var beforePage = pages[pages.length - 2]; // 前一个页面路径
     log(beforePage.$page.fullPath);if (beforePage.$page.fullPath === '/pagesII/searchGoods/searchGoods') {log('我执行了搜索'); //搜索	
-    }this.getSearch(options.name);console.log(options);this.serrchGoods = options.name;this.slMangguo = options.name;this.mangguoID = options.id;log(this.mangguoID);this.ShopIng(); //this.searchKey = options.name
+      this.getSearch(options.name);} else {// console.log(options)
+      this.serrchGoods = options.name;this.slMangguo = options.name;this.mangguoID = options.id;log(this.mangguoID);this.ShopIng();} //this.searchKey = options.name
     var obj = {};obj = wx.getMenuButtonBoundingClientRect();uni.getSystemInfo({ success: function success(res) {_this.width = obj.left || res.windowWidth;_this.height = obj.top ? obj.top + obj.height + 8 : res.statusBarHeight + 44;_this.inputTop = obj.top ? obj.top + (obj.height - 30) / 2 : res.statusBarHeight + 7;_this.arrowTop = obj.top ? obj.top + (obj.height - 32) / 2 : res.statusBarHeight + 6;_this.searchKey = options.name || ''; //传递的搜索关键字
         //略小，避免误差带来的影响
         _this.dropScreenH = _this.height * 750 / res.windowWidth + 186;_this.drawerH = res.windowHeight - uni.upx2px(100) - _this.height;} });}, computed: { tasteBox: function tasteBox() {var arr = [];var data = this.taste_level;data.forEach(function (item, index) {var tmp = { num: index, star: index + 1, label: item.title, value: item.title };arr.push(tmp);});return arr;}, colorBox: function colorBox() {var arr = [];var data = this.color_level;data.forEach(function (item, index) {var tmp = { num: index, star: index + 1, label: item.title, value: item.title };arr.push(tmp);});return arr;}, facadeBox: function facadeBox() {var arr = [];var data = this.facade_level;data.forEach(function (item, index) {var tmp = { num: index, star: index + 1, label: item.title, value: item.title };arr.push(tmp);});return arr;} }, methods: { //点击搜索
     goToSearchGoods: function goToSearchGoods() {uni.navigateTo({ url: '../../pagesII/searchGoods/searchGoods' });}, //商品详情页
     gotoList: function gotoList(id) {log(id);uni.navigateTo({ url: '../../pagesIII/productDetail/productDetail?id=' + id });}, //下拉选
-    dropDownList: function dropDownList(index, name) {if (index !== -1) {console.log("index：" + index, name);}this.title = name;this.dropdownShow = !this.dropdownShow;}, dropDownList2: function dropDownList2(index, name) {if (index !== -1) {console.log("index：" + index, name);}this.title = name;this.dropdownShow2 = !this.dropdownShow2;}, getSearch: function getSearch(serrchName) {var _this2 = this;var data = { pageNo: 1, pageSize: 10, name: serrchName };(0, _api.listing)(_request.getGoodsall, data).then(function (res) {log(res);_this2.goods = res.data.data[0].goods;log(_this2.goods);}).catch(function (err) {log(err);});}, /* 第一个筛选 */Total: function Total(index) {this.num = index;log(this.num);if (this.num == 0) {this.ShopIng();log('综合');} else if (this.num == 1) {if (this.sleter) {log('销量升序');this.getshopDESC();} else {this.getshopASC();log('销量降序');}this.sleter = !this.sleter;} else if (this.num == 2) {if (this.sleter2) {log('价格升序');this.getpriceDESC();} else {log('价格降序');this.getpriceASC();}this.sleter2 = !this.sleter2;} else if (this.num == 3) {uni.navigateTo({
-          url: '../../pagesIII/videos/videos' });
+    dropDownList: function dropDownList(index, name) {if (index !== -1) {console.log("index：" + index, name);}this.title = name;this.dropdownShow = !this.dropdownShow;}, dropDownList2: function dropDownList2(index, name) {if (index !== -1) {console.log("index：" + index, name);}this.title = name;this.dropdownShow2 = !this.dropdownShow2;}, getSearch: function getSearch(serrchName) {var _this2 = this;var data = { pageNo: 1, pageSize: 10, name: serrchName };(0, _api.listing)(_request.getGoodsall, data).then(function (res) {log(res);_this2.goods = res.data.data[0].goods;log(_this2.goods);}).catch(function (err) {log(err);});}, /* 第一个筛选 */Total: function Total(index) {this.num = index;log(this.num);if (this.num == 0) {this.ShopIng();log('综合');} else if (this.num == 1) {if (this.sleter) {log('销量升序');this.getshopDESC();} else {this.getshopASC();log('销量降序');}this.sleter = !this.sleter;} else if (this.num == 2) {if (this.sleter2) {log('价格升序');this.getpriceDESC();} else {log('价格降序');this.getpriceASC();}this.sleter2 = !this.sleter2;} else if (this.num == 3) {uni.navigateTo({ url: '../../pagesIII/videos/videos' });
 
         log('视频选果');
 

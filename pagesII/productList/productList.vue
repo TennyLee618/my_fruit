@@ -518,22 +518,22 @@
 		},
 		onLoad(options) {
 			var pages = getCurrentPages();
-
 			var curPage = pages[pages.length - 1]; // 当前页面路径
-
 			var beforePage = pages[pages.length - 2]; // 前一个页面路径
 			log(beforePage.$page.fullPath)
 			if (beforePage.$page.fullPath === '/pagesII/searchGoods/searchGoods') {
 				log('我执行了搜索')
 				//搜索	
+				this.getSearch(options.name)
+			} else {
+				// console.log(options)
+				this.serrchGoods = options.name
+				this.slMangguo = options.name
+				this.mangguoID = options.id
+				log(this.mangguoID)
+				this.ShopIng()
 			}
-			this.getSearch(options.name)
-			console.log(options)
-			this.serrchGoods = options.name
-			this.slMangguo = options.name
-			this.mangguoID = options.id
-			log(this.mangguoID)
-			this.ShopIng()
+			
 			//this.searchKey = options.name
 			let obj = {};
 			// #ifdef MP-WEIXIN

@@ -1,5 +1,5 @@
 {
-    "name" : "fruit-test1",
+    "name" : "fruit-test2",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -57,7 +57,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxc3f10711eb743246",
+        "appid" : "wxb820c791e554616c",
         "setting" : {
             "urlCheck" : false,
             "es6" : true,
